@@ -1,0 +1,36 @@
+
+import math
+
+def divisorsum(n):
+  i = 2
+  x = 1
+  while i<= math.sqrt(n):
+    if n % i == 0:
+      x += i
+      if (n/i) != i:
+        x += (n/i)
+    i += 1
+  return(int(x))
+
+b = set()
+
+
+def eul95():
+  f = 0
+  u = {}
+  for y in range(0,1000001):
+    k = divisorsum(y)
+    b.add(k)
+    'u[y] = k'
+  return(b)
+
+def chains():
+  u = eul95()
+  return(str(u))
+
+
+m = divisorsum(14264)
+p = open("95a.txt","w")
+
+p.write(chains())
+p.close()

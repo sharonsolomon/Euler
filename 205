@@ -1,0 +1,31 @@
+
+from itertools import product
+from collections import Counter
+from time import process_time
+
+
+def Euler205(): 
+  'Create a dictionary for each player that counts the frequency of the potential sums of dice'
+  PC = Counter(list(map(lambda x: sum(x),list(product(range(1,5), repeat=9)))))
+  CC = Counter(list(map(lambda x: sum(x),list(product(range(1,7),repeat=6)))))
+  'Make the keys in both dictionaries match'
+  PC[6] = 0
+  PC[7] = 0
+  PC[8] = 0
+
+  'create a list of the values of each total from the dictionary sorted by (now removed) key'
+  PL = []
+  CL = []
+  for i in sorted(PC.items()):
+    PL.append(i[1])
+  for y in sorted(CC.items()):
+    CL.append(y[1])
+
+  Pwin = 0
+
+  'Find the number of possibilities where Peter wins and return it divided by total possible combninations'
+  for u in range(0,31):
+    Pwin += CL[u]*sum(PL[u+1:31])
+  return(Pwin/((4**9)*(6**6)))
+  
+print(process_time())

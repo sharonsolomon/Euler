@@ -1,0 +1,19 @@
+
+#62
+
+
+listnew = []
+lista = []
+for x in range (25):
+  cubeA = x*x*x
+  lista.append(cubeA)
+  listnew.append(str(cubeA).sort())
+
+
+def sorted(y):
+  b = str(y)
+  b.
+
+
+print(listnew)
+print(lista)

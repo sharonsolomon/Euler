@@ -1,0 +1,14 @@
+
+def euler19():
+  listA = [31,29,31,30,31,30,31,31,30,31,30,31,31,28,31,30,31,30,31,31,30,31,30,31,31,28,31,30,31,30,31,31,30,31,30,31,31,28,31,30,31,30,31,31,30,31,30,31]
+  check = 0
+  countresult = 1
+  a = 1
+  repeatA = 0
+  for x in range(25):
+    for i in listA:
+      if (a % 7) == 0:
+        countresult += 1
+      check += 1
+      a += i
+  print(check, countresult, a)
